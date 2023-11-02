@@ -1,0 +1,25 @@
+we have to add
+
+"bootstrap": {
+            "syntheticShadow": true
+        }
+        
+into lwr.config.json to each route in order to allow the Shadow DOM to take control over the slds library; 
+
+
+-------------
+slds cdn: https://cdnjs.cloudflare.com/ajax/libs/design-system/2.22.0/styles/salesforce-lightning-design-system.min.css
+
+--------
+we have to install:
+yarn add lightning-base-components 
+and configure lwr.config.json file:
+ "lwc": {
+        "modules": [
+            { "dir": "$rootDir/src/modules" },
+            { "npm": "lightning-base-components" }
+        ]
+    },
+------------------------
+we create a mock server: yarn add json-server
+json-server --watch db.json --port 5005
